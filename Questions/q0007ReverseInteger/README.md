@@ -1,7 +1,7 @@
 ﻿
 # 007 Reverse Integer
 
-直接想到的暴力解就是把 int 轉成 str 後
+直接想到的暴力解就是把 int 轉成 str 後，由後往前一個一個加上去，最後回傳結果。
 
 ### Example:
 
