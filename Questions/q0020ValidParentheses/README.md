@@ -69,7 +69,6 @@ def isValid(s):
 
 上面的方法需要跑過 n 遍 ，所以為 O(N)。
 
-
 ## Note
 ### 正確的情況，假設有以下參數 :
 ```python
@@ -129,4 +128,38 @@ i = 2 時，s[3] = ")"，此時須將 A 從最外側移除，
 朋友才看一眼就知道我的思考完全出錯!!!
 但還是人很好的教我 stack solution，
 演算法跟資料處理好重要QQQQQ 
+```
+## Solution II 
+同樣是使用 stack solution ，但是著讓程式看起來更簡短
+```python
+    def isValid(self, s):
+        save = []
+        # s 的長度奇數直接回傳 False   
+        if len(s)%2 == 1:
+            return False
+        if len(s) > 1:
+            for ch in s : 
+                #分成兩大類，頭跟尾，頭的話放入，尾的話取出
+                if ch in "([{":
+                    save.append(ch)
+                    continue
+                if ch in ")]}":
+                    #遇到尾但清單是空的，所以直接回傳 False
+                    if  not save:
+                        return False
+                    #遇到對應的尾，取出對應的頭
+                    elif ch == ")" and save[-1] == "(":
+                        save.pop()
+                        continue
+                    elif ch == "]" and save[-1] == "[":
+                        save.pop()
+                        continue
+                    elif ch == "}" and save[-1] == "{":
+                        save.pop()
+                        continue
+                    #通通都取不出來時請哭哭回傳 False
+                    else:
+                        return False
+            #確認一下存放的清單在最後使否為空，是的話會回傳 True
+            return not save
 ```
