@@ -163,3 +163,28 @@ i = 2 時，s[3] = ")"，此時須將 A 從最外側移除，
             #確認一下存放的清單在最後使否為空，是的話會回傳 True
             return not save
 ```
+
+## Solution III
+再試著讓程式變得更短
+
+```python
+def isValid(s):
+    dic = {
+        "(" : ")",
+        "[" : "]",
+        "{" : "}"
+    }
+    save = []
+    for i in s:
+        #如果東西有在 dict中，就存入 i
+        if i in dic:
+            save.append(i)
+        # not save : 出現左半邊，但 save 當中又沒有東西可取出時，一定為錯
+        # dic[save.pop()] !=i : 去除掉 save 最後面的值，若對應 dict 後，
+        # 與 i 不同，代表不成對，回傳錯誤
+        elif not save or dic[save.pop()] !=i:
+           return False 
+    # 所有迴圈結束後 save 為空，表示括弧寫法正確       
+    if not save:
+        return True
+```
