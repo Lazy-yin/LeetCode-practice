@@ -19,43 +19,41 @@ return [0,1]
 ## Solution
 
 ```python
-class Solution(object):
-    def twoSum(self, nums, target):
+def twoSum(nums, target):
 
-        for i in range(len(nums)-1):
-            leave = target - nums[i]
-            #先固定其中一個數值，讓目標數扣掉數值後留下一個值
-            for j in range(1,len(nums)):
-                if nums[j] == leave:
-                #將值依序往後比對，相同，則回傳    
-                    return [i,j] 
+    for i in range(len(nums)-1):
+        leave = target - nums[i]
+        #先固定其中一個數值，讓目標數扣掉數值後留下一個值
+        for j in range(1,len(nums)):
+            if nums[j] == leave:
+            #將值依序往後比對，相同，則回傳    
+                return [i,j] 
 ```  
 
 ### 時間複雜度
 
-上面的方法需要跑過 n(n+1)/2 ，所以為 O(N^2)。
+上面的方法需要跑過 n(n+1)/2 ，所以為 O(n^2)。
 
 
 ## Solution
 
 ```python
-class Solution(object):
-    def twoSum(self, nums, target):
-        # 先創建一個dictionary 放置迭代後的資料
-        dict = {}
-        for i,j in enumerate(nums):
-            leave = target - nums[i]
-            #在 dict 中尋找
-            if leave in dict:
-                ans = [i, dict[leave]]
-                return ans
-            #若找不到則存入
-            else :
-                dict[j] = i
+def twoSum(nums, target):
+    # 先創建一個dictionary 放置迭代後的資料
+    dict = {}
+    for i,j in enumerate(nums):
+        leave = target - nums[i]
+        #在 dict 中尋找
+        if leave in dict:
+            ans = [i, dict[leave]]
+            return ans
+        #若找不到則存入
+        else :
+            dict[j] = i
 ```  
 ### 時間複雜度
 
-上面的方法需要跑過 n-1 遍 ，所以為 O(N)。
+上面的方法需要跑過 n-1 遍 ，所以為 O(n)。
 
 ## Note
 假設有以下參數

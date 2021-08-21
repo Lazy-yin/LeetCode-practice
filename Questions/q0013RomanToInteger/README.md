@@ -32,7 +32,7 @@ def romanToInt(s):
         return ans 
 ```  
 ### 時間複雜度
-上面的方法需要跑過 n 遍 ，所以為 O(N)。
+上面的方法需要跑過 n 遍 ，所以為 O(n)。
 ## Note
 假設有以下變數
 ```python
