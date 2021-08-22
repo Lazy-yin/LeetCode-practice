@@ -8,6 +8,7 @@ out = removeDuplicates(nums)
 for i in range(out):
     if ans[i] in nums:
         pass
-    elif ans[i] in nums:
+    elif ans[i] not in nums:
         print("wrong answer")
+        break
 print("right answer")
