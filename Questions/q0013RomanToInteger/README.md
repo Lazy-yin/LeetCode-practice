@@ -32,13 +32,14 @@ def romanToInt(s):
         return ans 
 ```  
 ### 時間複雜度
-上面的方法需要跑過 n 遍 ，所以為 O(n)。
+此方法需要隨著 s 的長度，跑過 n 個步驟 ，所以為 O(n)。
+
 ## Note
-假設有以下變數
+假設有以下參數 : 
 ```python
 s = XIV
 ```
-我的思考說明
+說明 : 
 ```python
 ans = 0
 table = "I"

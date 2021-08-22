@@ -29,7 +29,7 @@ def strStr(haystack, needle):
 
 ### 時間複雜度
 
-方法中需要隨著 len(haystack) 的長度做 n 個步驟，因此為 O(n)。
+方法中需要隨著 haystack 的長度做 len(haystack) 個步驟，因此為 O(n)。
 
 ## Note
 假設有以下參數 :
@@ -43,8 +43,10 @@ needle = "ee"
   0        0        ee       aa      haystack[0:2]
   1        1        ee       aa      haystack[1:3]
   2        2        ee       ae      haystack[2:4]
-  3        3        ee       ee      haystack[3:5] 
- 
-回傳 3 作為答案。
+  3        3        ee  ==   ee      haystack[3:5]    return count
+
+
+
+回傳 count
 ```
 

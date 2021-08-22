@@ -52,9 +52,9 @@ def longestCommonPrefix(strs):
 
 ### 時間複雜度
 
-超級複雜，因為跑過了各式各樣的迴圈
-1. 先從清單中找到最短的元素，因為跑過 N 個元素，所以是 O(n)
-2. 讓最短的元素中由第一個字母依序往後比 ，先將第一個字母與清單中元素比較，再比較第二個字母，由此可知為 N**2，所以是 O(n^2)
+超級耗費時間和記憶體，因為跑過了各式各樣的迴圈
+1. 先從清單中找到最短的元素，所以隨著 strs 的長度跑過 n 個步驟，所以是 O(n)
+2. 再藉由枚舉，讓 lists 的字元與 strs 字元做比較，因為要做 len(strs) * len(strs) 個步驟，所以是 O(n^2)
 3. 若有相同者存入另一個清單(save)
 4. 從 save 清單中找到最短的那個就是答案，因為跑過 n 個元素，所以是 O(n)
 
@@ -94,16 +94,17 @@ num   lists        strs[x][2] = "o"       save +=strs[x][2]
  1   "flow"              有                       flo
  2   "flight"            無                    跳出迴圈
 
+
   strs 的枚舉，再比較最短元素中的第四個字母，若有則放入 save 保存，無則跳出迴圈
 num   lists        strs[x][3] = "o"       save +=strs[x][3]
  0   "flower"            有                       flow
  1   "flow"              有                       flow
 
+
 4. 從 save 清單中找到最短的那個就是答案
-最後 save = ["flow", "flow", "fl"]
-而最短的 "fl" 即是解答 
-所以回傳 "fl"
+   最後 save = ["flow", "flow", "fl"]，而最短的 "fl" 即是解答 
 
-
+   
+   回傳 "fl"
 ```
 

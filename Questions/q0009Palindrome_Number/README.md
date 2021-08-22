@@ -29,13 +29,26 @@ def isPalindrome(x):
 ```  
 
 ## Note
+
 python 中有兩個簡單的反轉功能，一個為 [::-1]，另一個為 .reverse()
 [::-1] 能使用在 list 或 str上，
 但 .reverse() 只能使用在 list
+
+#### 假設有以下參數 : 
+```python
+x = 14541
+```
+說明 : 
 ```python
 若 x = 14541，轉換成字串後，反轉，會得到 re_num = 14541
 再判斷 x = 14541 == re_num = 14541，因此回傳 True。
-
+```
+#### 假設有以下參數 : 
+```python
+若 x = 1450
+```
+說明 : 
+```python
 若 x = 1450，轉換為字串後，反轉，會得到 re_num = 0541
 再判斷 x = 1450 != re_num = 0541，因此回傳 False
 ```
